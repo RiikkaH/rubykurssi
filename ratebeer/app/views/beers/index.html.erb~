@@ -26,10 +26,6 @@
   </tbody>
 </table>
 
-<p>
-  <%= link_to 'list of breweries' , breweries_path %>
-</p>
-
 <br>
 
 <%= link_to 'New Beer', new_beer_path %>

@@ -14,8 +14,12 @@
 
 <p>
  <% @brewery.beers.each do |beer| %>
-   <%= beer.name %>
+   <%= link_to beer.name %>
  <% end %>
+</p>
+
+<p>
+  <%= link_to 'list of beers' , beers_path %>
 </p>
 
 <%= link_to 'Edit', edit_brewery_path(@brewery) %> |
