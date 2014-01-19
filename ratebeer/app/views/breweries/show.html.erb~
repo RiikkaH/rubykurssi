@@ -8,5 +8,15 @@
   <I>Established in <%= @brewery.year %></I>
 </p>
 
+<p>
+  Number of beers <%= @brewery.beers.count %>
+</p>
+
+<p>
+ <% @brewery.beers.each do |beer| %>
+   <%= beer.name %>
+ <% end %>
+</p>
+
 <%= link_to 'Edit', edit_brewery_path(@brewery) %> |
 <%= link_to 'Back', breweries_path %>
