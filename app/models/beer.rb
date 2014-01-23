@@ -10,5 +10,6 @@ class Beer < ActiveRecord::Base
       howMany=howMany+1
     end
     sum/howMany
+
   end
 end
