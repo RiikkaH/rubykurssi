@@ -12,4 +12,9 @@ class Beer < ActiveRecord::Base
     sum/howMany
 
   end
+
+  def to_s
+    "#{name}, #{Brewery.find(brewery_id).name}"
+  end
+
 end
