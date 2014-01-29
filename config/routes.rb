@@ -1,11 +1,17 @@
 Ratebeer::Application.routes.draw do
+  resources :users
+
   resources :beers
 
   resources :breweries
 
+  resources :sessions, only: [:new, :create]
+
   root 'breweries#index'
 
   get 'kaikki_bisset', to: 'beers#index'
+
+  get 'signup', to: 'users#new'
 
   #get 'ratings', to: 'ratings#index'
 
