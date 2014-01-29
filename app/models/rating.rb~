@@ -4,11 +4,5 @@ class Rating < ActiveRecord::Base
   def to_s
     "#{beer.name} #{score}"
   end
-  
-  def destroy
-    rating = Rating.find(params[:id])
-    rating.delete
-    redirect_to ratings_path
-  end
 
 end
