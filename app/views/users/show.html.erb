@@ -14,7 +14,7 @@
  <% end %>
 </ul>
 
-<h2>beer clubs</h2>
+<h2>member in following beer clubs</h2>
 <ul>
  <% @user.memberships.each do |membership| %>
    <li> <%= BeerClub.find(membership.beer_club_id).name %> </li>

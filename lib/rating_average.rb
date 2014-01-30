@@ -7,7 +7,11 @@ module RatingAverage
       sum=sum+r.score
       howMany=howMany+1
     end
+   if(howMany > 0)
     sum/howMany
+   else
+    0
+   end
   end
 
 end
