@@ -10,11 +10,16 @@
 
 <ul>
  <% @user.ratings.each do |rating| %>
-   <li> <%=rating.to_s %> <%= link_to 'delete', rating, :method => :delete , data: { confirm: 'Are you sure?' }%> </li>
+   <li> 
+        <%= rating %> 
+        <% if @user == current_user %>
+            <%= link_to 'delete', rating, method: :delete, data: { confirm: 'Are you sure?' } %> 
+        <% end %>
+      </li>
  <% end %>
 </ul>
 
-<h2>beer clubs</h2>
+<h2>member in following beer clubs</h2>
 <ul>
  <% @user.memberships.each do |membership| %>
    <li> <%= BeerClub.find(membership.beer_club_id).name %> </li>
@@ -22,6 +27,10 @@
 </ul>
 
 <p>
+  <% if @user == current_user %>
+    <%= link_to 'Destroy', current_user, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 </p>
