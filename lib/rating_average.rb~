@@ -11,6 +11,7 @@ module RatingAverage
     sum/howMany
    else
     0
+   end
   end
 
 end
