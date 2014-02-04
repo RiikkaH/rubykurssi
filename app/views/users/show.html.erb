@@ -18,6 +18,16 @@
       </li>
  <% end %>
 </ul>
+<p>
+  <% if not @user.favorite_style.nil? %>
+     favorite style: <%= @user.favorite_style %>
+  <% end %>
+</p>
+<p>
+  <% if not @user.favorite_brewery.nil? %>
+     favorite brewery: <%= @user.favorite_brewery.name %>
+  <% end %>
+</p>
 
 <h2>member in following beer clubs</h2>
 <ul>

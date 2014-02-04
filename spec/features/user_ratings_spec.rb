@@ -46,4 +46,11 @@ describe "Rating" do
     expect(page).to have_content 'iso 3 10'
   end
 
+  it "when exists, favorite style and brewery show on users page" do
+    visit user_path(user2)
+
+    expect(page).to have_content 'favorite style: Lager'
+    expect(page).to have_content 'favorite brewery: Koff'
+  end
+
 end

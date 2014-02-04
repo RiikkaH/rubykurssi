@@ -119,14 +119,16 @@ describe "favorite brewery" do
     end
 
     it "is the brewery that has highest average rating" do
-      beer1 = FactoryGirl.create(:beer, brewery:"Panimo1")
-      beer2 = FactoryGirl.create(:beer, brewery:"Panimo2")
-      beer3 = FactoryGirl.create(:beer, brewery:"Panimo2")
+      brewery1 = FactoryGirl.create(:brewery)
+      brewery2 = FactoryGirl.create(:brewery, name:"Panimo")
+      beer1 = FactoryGirl.create(:beer, brewery:brewery1)
+      beer2 = FactoryGirl.create(:beer, brewery:brewery2)
+      beer3 = FactoryGirl.create(:beer, brewery:brewery2)
       rating1 = FactoryGirl.create(:rating, score:11, beer:beer1, user:user)
       rating2 = FactoryGirl.create(:rating, score:30, beer:beer2, user:user)
       rating3 = FactoryGirl.create(:rating, score:10, beer:beer3, user:user)
 
-      expect(user.favorite_brewery).to eq("Panimo2")
+      expect(user.favorite_brewery).to eq(brewery2)
     end
   end
 
