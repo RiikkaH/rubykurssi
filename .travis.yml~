@@ -13,4 +13,3 @@ deploy:
   app: rubykurssi
   on:
     repo: RiikkaH/rubykurssi
-  run: "rake db:migrate"
