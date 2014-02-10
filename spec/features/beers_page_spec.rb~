@@ -25,7 +25,7 @@ describe "Beer" do
 
     click_button "Create Beer"
 
-    expect(pgae).to have_content 'New beer'
+    expect(page).to have_content 'New beer'
     expect(Beer.count).to eq(0)
     expect(page).to have_content '1 error prohibited this beer from being saved:'
   end
