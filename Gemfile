@@ -28,6 +28,10 @@ group :test do
   gem 'simplecov', require: false
 end
 
+gem 'httparty'
+gem 'webmock'
+gem "rails-settings-cached", "0.3.1"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
