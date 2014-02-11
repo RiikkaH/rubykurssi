@@ -26,10 +26,10 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov', require: false
+  gem 'webmock'
 end
 
 gem 'httparty'
-gem 'webmock'
 gem "rails-settings-cached", "0.3.1"
 
 # Use SCSS for stylesheets

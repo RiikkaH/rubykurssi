@@ -1,7 +1,7 @@
 class BeermappingApi
   def self.places_in(city)
     city = city.downcase
-    Rails.cache.fetch(city) { fetch_places_in(city) } #:expires_in 30
+    Rails.cache.fetch(city, expires_in: 604800) { fetch_places_in(city) } #7 päivää * 24 tuntia * 60 minuuttia * 60 sekuntia
   end
 
   private
@@ -18,6 +18,14 @@ class BeermappingApi
     places.inject([]) do | set, place |
       set << Place.new(place)
     end
+  end
+
+  def self.fetch_place(id)
+    url="http://beermapping.com/webservice/locquery/#{key}/#{id}"
+
+    response= HTTParty.get url
+    Place.new(response["bmp_locations"]["location"])
+
   end
 
   def self.key
