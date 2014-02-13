@@ -16,10 +16,10 @@
     <% @beers.each do |beer| %>
       <tr>
         <td><%= link_to beer.name, beer %></td>
-        <td><%= beer.style %></td>
+        <td><%= link_to beer.style.name %></td>
         <td><%= link_to (Brewery.find beer.brewery_id).name, brewery_path(Brewery.find beer.brewery_id) %></td>
         <td><%= link_to 'Edit', edit_beer_path(beer) if current_user%></td>
-        <td><%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td>
+        <td><%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } if is_admin %></td>
       </tr>
     <% end %>
   </tbody>

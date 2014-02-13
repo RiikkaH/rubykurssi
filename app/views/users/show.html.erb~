@@ -19,12 +19,12 @@
  <% end %>
 </ul>
 <p>
-  <% if @user.favorite_style.nil? %>
+  <% if not @user.favorite_style.nil? %>
      favorite style: <%= @user.favorite_style %>
   <% end %>
 </p>
 <p>
-  <% if @user.favorite_brewery.nil? %>
+  <% if not @user.favorite_brewery.nil? %>
      favorite brewery: <%= @user.favorite_brewery.name %>
   <% end %>
 </p>

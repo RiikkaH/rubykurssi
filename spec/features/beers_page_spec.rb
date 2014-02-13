@@ -2,6 +2,7 @@ require 'spec_helper'
 
 
 describe "Beer" do
+  let!(:style) { FactoryGirl.create :style }
   let!(:brewery) { FactoryGirl.create :brewery, name:"Koff" }
   let!(:user) { FactoryGirl.create :user }
 
@@ -14,7 +15,7 @@ describe "Beer" do
 
     fill_in('beer[name]', with:"uusiolut")
     select('Koff', from:'beer[brewery_id]')
-    select('Lager', from:'beer[style]')
+    select('Lager', from:'beer[style_id]')
 
     expect{
       click_button "Create Beer"
@@ -26,7 +27,7 @@ describe "Beer" do
 
     fill_in('beer[name]', with:"")
     select('Koff', from:'beer[brewery_id]')
-    select('Lager', from:'beer[style]')
+    select('Lager', from:'beer[style_id]')
 
     click_button "Create Beer"
 

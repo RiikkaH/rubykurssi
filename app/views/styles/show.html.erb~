@@ -12,7 +12,7 @@
 
 <ul>
   <% @style.beers.each do |b| %>
-    <li> <%= b.name %> by <%= b.brewery.name %> </li>
+    <%= b.name %> by <%= b.brewery.name %>
   <% end %>
 </ul>
 

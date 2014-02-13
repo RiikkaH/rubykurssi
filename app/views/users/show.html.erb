@@ -20,7 +20,7 @@
 </ul>
 <p>
   <% if not @user.favorite_style.nil? %>
-     favorite style: <%= @user.favorite_style %>
+     favorite style: <%=link_to @user.favorite_style.name, style_path(@user.favorite_style) %>
   <% end %>
 </p>
 <p>
