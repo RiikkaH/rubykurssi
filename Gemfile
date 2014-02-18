@@ -27,10 +27,14 @@ group :test do
   gem 'launchy'
   gem 'simplecov', require: false
   gem 'webmock'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner', '< 1.1.0'
 end
 
 gem 'httparty'
 gem "rails-settings-cached", "0.3.1"
+
+gem 'jquery-turbolinks'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

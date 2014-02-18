@@ -31,6 +31,10 @@ Ratebeer::Application.routes.draw do
   get 'signin', to: 'sessions#new'
   delete 'signout', to: 'sessions#destroy'
 
+  get 'beerlist', to:'beers#list'
+
+  get 'brewerylist', to:'breweries#list'
+
   #get 'ratings', to: 'ratings#index'
 
   #get 'ratings/new', to:'ratings#new'
