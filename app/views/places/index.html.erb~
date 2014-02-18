@@ -19,7 +19,7 @@
         <% Place.rendered_fields.each do |f| %>
          
           <% if f.to_s=="name" %>
-            <td><%= link_to place.send(f), place.id %></td>
+            <td><%= link_to place.send(f), place_path(place.id) %></td>
           <% else %>
             <td><%= place.send(f) %></td>
           <% end %>
