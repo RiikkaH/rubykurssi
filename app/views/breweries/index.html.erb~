@@ -1,34 +1,50 @@
+<p id="notice"><%= notice %></p>
 
-<h1>Listing breweries</h1>
-<p> Number of breweries: <%= @breweries.count %> </p>
+<h1>Breweries</h1>
 
-<table class="table table-hover">>
+<h2>Active</h2>
+
+<p> Number of active breweries: <%= @active_breweries.count %> </p>
+
+<table class="table table-hover">
   <thead>
     <tr>
-      <th> <%= link_to 'Name', breweries_path(order:"name") %> </th>
-      <th> <%= link_to 'Year', breweries_path(order:"year") %> </th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><%= link_to 'Name', breweries_path(order:"name") %></th>
+      <th><%= link_to 'Year', breweries_path(order:"year") %></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @breweries.each do |brewery| %>
+    <% @active_breweries.each do |brewery| %>
       <tr>
-        <td><%= link_to brewery.name, brewery_path(brewery) %></td>
+        <td><%= link_to brewery.name, brewery %></td>
         <td><%= brewery.year %></td>
-        <td><%= link_to 'Edit', edit_brewery_path(brewery) if current_user %></td>
-        <td><%= link_to 'Destroy', brewery, method: :delete, data: { confirm: 'Are you sure?' } if is_admin %></td>
+        <td></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<p>
-  <%= link_to 'list of beers' , beers_path %>
-</p>
+<h2>Retired</h2>
 
-<br>
+<p> Number of retired breweries: <%= @retired_breweries.count %> </p>
 
-<%= link_to 'New Brewery', new_brewery_path, class:"btn btn-primary"  %>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th><%= link_to 'Name', breweries_path(order:"name") %></th>
+    <th><%= link_to 'Year', breweries_path(order:"year") %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @retired_breweries.each do |brewery| %>
+      <tr>
+        <td><%= link_to brewery.name, brewery %></td>
+        <td><%= brewery.year %></td>
+        <td></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+

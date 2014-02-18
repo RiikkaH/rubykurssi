@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-  before_action :ensure_that_signed_in, except: [:index, :show, :list, :nglist]
+  before_action :ensure_that_signed_in, except: [:index, :show, :list]
   before_action :ensure_that_is_admin, only: [:destroy]
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
   before_action :set_breweries_and_styles_for_template, only: [:new, :edit, :create]
@@ -12,7 +12,8 @@ class BeersController < ApplicationController
   # GET /beers.json
   def index
     @beers = Beer.all
-    
+    @best = Beer.top(3)    
+
     order = params[:order] || 'name'
 
     case order
@@ -23,9 +24,6 @@ class BeersController < ApplicationController
   end
 
   def list
-  end
-
-  def nglist
   end
 
   # GET /beers/1

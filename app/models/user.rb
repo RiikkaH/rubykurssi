@@ -50,4 +50,9 @@ class User < ActiveRecord::Base
     b
   end
 
+  def self.top(n)
+    sorted_by_rating_count_in_desc_order = User.all.sort_by{ |u| -(u.ratings.count) }
+    sorted_by_rating_count_in_desc_order.slice(0,n)
+  end
+
 end

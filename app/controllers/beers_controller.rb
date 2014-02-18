@@ -12,7 +12,8 @@ class BeersController < ApplicationController
   # GET /beers.json
   def index
     @beers = Beer.all
-    
+    @best_beers = Beer.top(3)    
+
     order = params[:order] || 'name'
 
     case order
