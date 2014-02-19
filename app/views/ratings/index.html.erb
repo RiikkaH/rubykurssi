@@ -24,9 +24,9 @@
           </tr>
         </thead>
         <tbody>
-          <% best_styles.each {|style, avg| } %>
+          <% @best_styles.each do |style, avg| %>
             <tr>
-              <td><%= style %></td><td><%= avg %></td>
+              <td><%= style %></td><td><%= round(avg) %></td>
             </tr>
           <% end %>
         </tbody>

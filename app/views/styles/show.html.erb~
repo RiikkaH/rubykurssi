@@ -4,17 +4,16 @@
   <%= @style.name %>
 </h1>
 
-<p>
+<quote>
   <%= @style.description %>
-</p>
+</quote>
 
 <p><strong>beers:</strong></p>
 
 <ul>
   <% @style.beers.each do |b| %>
-    <%= b.name %> by <%= b.brewery.name %>
+    <li> <%= b.name %> by <%= b.brewery.name %> </li>
   <% end %>
 </ul>
 
-<%= link_to 'Edit', edit_style_path(@style) %> |
-<%= link_to 'Back', styles_path %>
+<%= edit_and_destroy_buttons(@style) %>

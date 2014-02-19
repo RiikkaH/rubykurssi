@@ -16,7 +16,21 @@
   <div class="col-md-4">
     
     <h3>Best styles</h3>
-          
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>average</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @best_styles.each do |style, avg| %>
+            <tr>
+              <td><%= style %></td><td><%= avg %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>    
     
   </div>
 </div>

@@ -6,7 +6,7 @@
    </tr>
   </thead>
   <tbody>
-    <% beers.each do |b| %>
+    <% beers_or_breweries.each do |b| %>
       <tr>
         <td><%= b %></td><td><%= b.average_rating %></td>
       </tr>
